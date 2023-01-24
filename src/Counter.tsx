@@ -3,7 +3,6 @@ import { interval } from "rxjs"
 
 const source$ = interval(1000);
 
- 
 export const Counter = () => {
     const [ count, setCount ] = useState(0);
 
@@ -13,6 +12,7 @@ export const Counter = () => {
         })
 
         return () => { subscription.unsubscribe() }
-    }, [source$ ])
+    }, [source$])
+    
     return <div>{count}</div>
 }
